@@ -1,0 +1,25 @@
+Flask的URL规则使用的是Werkzeug’s routing模块
+
+url_for()函数用来生成一个URL，使用一个函数名作为第一个参数。作用为根据第一个函数名和后面的参数生成一个该函数处理的URL（相对地址），后面的参数作为query string。
+
+Flask中使用的css和js文件默认放在static文件夹内（可以另行设置其它路径）。
+
+模板文件（一般为html文件）一般是包涵了脚本代码的html文件，它们存放在templates文件夹下。{% %}中间包涵了语句，{{}}中间包涵了变量名（语句中不需要嵌套该标记）。使用render_template函数来渲染模板。
+
+使用request可以获取client通过form发来的信息，request.form是一个字典返回了form中的信息，request.arg.get()来获得query string中的值（?key=value）。
+
+可以通过request.cookies.get()获得浏览器传来的cookie，并且可以在response对象上使用set_cookie方法来保存cookie。
+
+redirect函数用来重定向网页，abort(errno)使用错误码errno来终止一个request。使用errorhandler(errno)装饰器来修改一个错误页面的显示方式。
+
+任何从函数返回的值都会被转换为response对象（如果本身已是则不用转换）返回，可以使用make_response函数来生成一个response对象并对它进行修改，然后返回。
+
+Flask使用SQLAlchemy来管理数据库。
+
+使用flask-login时，current_user代理是通过执行login_user函数完成和user对象的绑定。
+
+制作flask插件：flask插件只要py本身或者包的名字（文件夹名）格式为flask_extname，extname为插件名。插件本身放在sys.path中的路径中即可。
+
+flask-script插件主要用来完成一些Web APP之外的命令行工作，如启动一个runserver，开启一个py shell或者设置数据库和cronjobs等等。
+
+
