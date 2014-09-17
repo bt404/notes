@@ -37,7 +37,7 @@
 
 2. Sparse Index 只为那些存在索引域的 documents 创建索引，即使它们索引域的值为 null。相对的，non-sparse 索引为每个 document 创建索引，如果一个 document 不包括该索引域，那么它的索引值为 null。
 
-3. unique index 表示 mongo 拒绝为索引域含重复值的 collection 在相应索引域创建索引。默认为 false。
+3. Unique Index 表示 mongo 拒绝为索引域含重复值的 collection 在相应索引域创建索引。默认为 false。
 
 * 索引类型
 
