@@ -31,18 +31,28 @@
 
 * 使用 index 的好处之一是 index 的存储默认按升序排列，引擎可以直接按升序或降序遍历索引，而不需要一个额外的排序过程。
 
+* 索引属性
+
+1. TTL Index 适用于 date 类型的域，用来指定该索引的存在时间。
+
+2. Sparse Index 只为那些存在索引域的 documents 创建索引，即使它们索引域的值为 null。相对的，non-sparse 索引为每个 document 创建索引，如果一个 document 不包括该索引域，那么它的索引值为 null。
+
+3. unique index 表示 mongo 拒绝为索引域含重复值的 collection 在相应索引域创建索引。默认为 false。
+
 * 索引类型
 
-* Mongo 为每个 collection 的 _id 域自动创建索引。
+1. Mongo 为每个 collection 的 _id 域自动创建索引。
 
-* Single filed Index，即根据一个域创建索引。
+2. Single filed Index，即根据一个域创建索引。
 
-* Compound Index，使用一个索引列表，指明多个域，多个域之间有主次关系。如 { userid: 1, score: -1 } 表示索引先按 userid 域的升序排序，然后针对每个 userid，再按 score 的降序排序。
+3. Compound Index，使用一个索引列表，指明多个域，多个域之间有主次关系。如 \{ userid: 1, score: -1 \} 表示索引先按 userid 域的升序排序，然后针对每个 userid，再按 score 的降序排序。
 
-* Mutikey Index，针对一个 value 是数组类型的域建立的索引，有系统决定是否建立该类型索引。
+4. Mutikey Index，针对一个 value 是数组类型的域建立的索引，有系统决定是否建立该类型索引。
 
-* Geospatial Index，使用 geohash 算法每次4格划分，根据字符串的前缀匹配来查找一个点附近的点。缺点：格子边界两侧的点虽十分接近，但是编码相异度较大，可以同时搜索该各自周围的8个格子来解决该问题。（收藏了博文详细讲解 geohash 算法以及 geohash 距离估算）
+5. Geospatial Index，使用 geohash 算法每次4格划分，根据字符串的前缀匹配来查找一个点附近的点。缺点：格子边界两侧的点虽十分接近，但是编码相异度较大，可以同时搜索该各自周围的8个格子来解决该问题。（收藏了博文详细讲解 geohash 算法以及 geohash 距离估算）
 
-* Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \\" 括住，则表示 AND 关系，使用 \- 前导符表示非。
+6. Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \\" 括住，则表示 AND 关系，使用 \- 前导符表示非。
 
-* Hashed Indexes，只能用于精确匹配查找，而不能用于范围查找。
+7. Hashed Indexes，只能用于精确匹配查找，而不能用于范围查找。
+
+
