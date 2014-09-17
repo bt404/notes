@@ -33,16 +33,16 @@
 
 * 索引类型
 
-+ Mongo 为每个 collection 的 _id 域自动创建索引。
+* Mongo 为每个 collection 的 _id 域自动创建索引。
 
-+ Single filed Index，即根据一个域创建索引。
+* Single filed Index，即根据一个域创建索引。
 
-+ Compound Index，使用一个索引列表，指明多个域，多个域之间有主次关系。如 { userid: 1, score: -1 } 表示索引先按 userid 域的升序排序，然后针对每个 userid，再按 score 的降序排序。
+* Compound Index，使用一个索引列表，指明多个域，多个域之间有主次关系。如 { userid: 1, score: -1 } 表示索引先按 userid 域的升序排序，然后针对每个 userid，再按 score 的降序排序。
 
-+ Mutikey Index，针对一个 value 是数组类型的域建立的索引，有系统决定是否建立该类型索引。
+* Mutikey Index，针对一个 value 是数组类型的域建立的索引，有系统决定是否建立该类型索引。
 
-+ Geospatial Index
+* Geospatial Index
 
-+ Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \\" 括住，则表示 AND 关系，使用 \- 前导符表示非。
+* Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \\" 括住，则表示 AND 关系，使用 \- 前导符表示非。
 
-+ Hashed Indexes，只能用于精确匹配查找，而不能用于范围查找。
+* Hashed Indexes，只能用于精确匹配查找，而不能用于范围查找。
