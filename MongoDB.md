@@ -41,7 +41,7 @@
 
 * Mutikey Index，针对一个 value 是数组类型的域建立的索引，有系统决定是否建立该类型索引。
 
-* Geospatial Index
+* Geospatial Index，使用 geohash 算法每次4格划分，根据字符串的前缀匹配来查找一个点附近的点。缺点：格子边界两侧的点虽十分接近，但是编码相异度较大，可以同时搜索该各自周围的8个格子来解决该问题。（收藏了博文详细讲解 geohash 算法以及 geohash 距离估算）
 
 * Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \\" 括住，则表示 AND 关系，使用 \- 前导符表示非。
 
