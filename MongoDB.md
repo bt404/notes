@@ -6,6 +6,7 @@
 3. 对于find，第二个参数用来表示用来显示或者不显示哪些field，但是不能同时设置显示的field和不显示的field，即不能同时包含field:0和field:1。
 
 4. 数据库备份
+
 * mongodump -d 数据库名 -o 保存文件夹 -h 连接主机（默认localhost）
 * mongorestore -d 数据库名 保存文件夹/* --drop（用来删除原有同名数据库）
 * mongoexport可以导出数据库中的表，而不能导出数据库。对应的mongoimport有同样的使用范围。
