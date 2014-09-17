@@ -7,9 +7,9 @@
 
 4. 数据库备份
 
-* mongodump -d 数据库名 -o 保存文件夹 -h 连接主机（默认localhost）
-* mongorestore -d 数据库名 保存文件夹/* --drop（用来删除原有同名数据库）
-* mongoexport可以导出数据库中的表，而不能导出数据库。对应的mongoimport有同样的使用范围。
+* mongodump -d 数据库名 -o 保存文件夹 -h 连接主机（默认localhost）。
+* mongorestore -d 数据库名 保存文件夹/* --drop（用来删除原有同名数据库）。
+* mongoexport 可以导出数据库中的表，而不能导出数据库。对应的mongoimport有同样的使用范围。
 
 5. 如何开启认证机制
 
@@ -33,4 +33,16 @@
 
 * 索引类型
 
-+ 
++ Mongo 为每个 collection 的 _id 域自动创建索引。
+
++ Single filed Index，即根据一个域创建索引。
+
++ Compound Index，使用一个索引列表，指明多个域，多个域之间有主次关系。如 { userid: 1, score: -1 } 表示索引先按 userid 域的升序排序，然后针对每个 userid，再按 score 的降序排序。
+
++ Mutikey Index，针对一个 value 是数组类型的域建立的索引，有系统决定是否建立该类型索引。
+
++ Geospatial Index
+
++ Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \" 括住，则表示 AND 关系，使用 - 前导符表示非。
+
++ Hashed Indexes
