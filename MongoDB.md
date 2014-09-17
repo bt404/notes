@@ -43,6 +43,6 @@
 
 + Geospatial Index
 
-+ Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \" 括住，则表示 AND 关系，使用 - 前导符表示非。
++ Text Indexes，匹配一个值是 string 或 string 数组的域，多个单词用空格隔开，表示 OR 关系。如果用 \\" 括住，则表示 AND 关系，使用 - 前导符表示非。
 
-+ Hashed Indexes
++ Hashed Indexes，只能用于精确匹配查找，而不能用于范围查找。
