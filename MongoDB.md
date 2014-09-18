@@ -33,7 +33,7 @@
 
 * 索引属性
 
-1. TTL Index 适用于 date 类型的域，用来指定该索引的存在时间。
+1. TTL Index 适用于 date 类型的域，过期后，该 document 被从数据库中删除（可能有延迟）。
 
 2. Sparse Index 只为那些存在索引域的 documents 创建索引，即使它们索引域的值为 null。相对的，non-sparse 索引为每个 document 创建索引，如果一个 document 不包括该索引域，那么它的索引值为 null。
 
