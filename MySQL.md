@@ -1,4 +1,5 @@
 ### SQL 基础
+
 1. distinct 用于去重，可以用在 * 符号后。如果域中有 NULL，同样会显示一个 NULL。
 
 2. MySQL 既接受双引号也接受单引号，并且 <> 等价于 !=。
@@ -28,6 +29,7 @@
 14. 使用别名只要在相应的表名或列名后面添加 as new_name 即可。
 
 ### join
+
 1. join 默认为 inner join，语法为：
 select tb1.col1, ..., tbl2.col1 from tb1 join tb2 on tb1.colN = tb2.colN;
 内连接要求至少有一个匹配时才返回行。
@@ -36,6 +38,59 @@ select tb1.col1, ..., tbl2.col1 from tb1 join tb2 on tb1.colN = tb2.colN;
 
 3. MySQL 本身不支持 full join 的语法。不过可以通过 left join 和 right join 各一次然后 union 来实现 full join的功能。
 
-4. union 默认去掉重复数据，若不去重则使用 union all。
+4. union 默认去掉重复数据，若不去重则使用 union all。union [all] 要求两边的 select 语句必须返回相同的列数且对应列的数据类型相同。
 
-5. 
+5. MySQL 不支持 select into 语法，可以通过 create table tbl_name(select...); 实现。
+
+### 常用约束
+
+* NOT NULL
+* UNIQUE
+* PRIMARY KEY
+* FOREIGN KEY
+* CHECK
+* DEFAULT
+
+1. 建表时，多个约束之间不实用逗号分隔。可以直接在字段后面添加 unique，也可以在一个新行里使用 unique(col1, col2, ...)。
+
+2. 对于已经建立的表增加 unique 约束，使用 alter table tbl_name add unique(col); 添加 unique 约束时可以指定约束名，若无指定会自动生成一个（可以通过 show create table tbl_name; 查看）。unique 约束默认在该列上创建索引，要删除 unique 约束需要执行：alter table tbl_name drop index 约束名;
+
+3. 增加主键的语法和 unique 类似，删除主键只需：alter table tbl_name drop primary key;
+
+4. 创建 foreign key 的语法：alter table tbl1 add foreign key(col) references tbl2(col); 相比之前的约束多了 references 关键字。同样可以为外键命名，以上约束（除主键外）命名前需要添加 constraint 关键字。
+
+5. MySQL 不支持 check 的功能，但是可以编译通过，只是没有效果。如果要实现 check 的功能，应该使用触发器来替代。
+
+6. 设置 default 的语法为：alter table tbl_name alter col set default val; 删除的语法为：alter table tbl_name alter col drop default;
+
+### 索引
+
+1. create index idx_name on tbl_name(col1, col2, ...);
+
+2. drop index inx_name on tbl_name; 或 alter table tbl_name drop index idx_name;
+
+### 修改表
+
+1. 修改数据类型的两种方式：
+* alter table tbl_name change col_name new_col_name col_type constraint_name;
+* alter table tbl_name modify col_name col_type constraint_name;
+后者不能修改列名。
+
+2. alter table tb1 add col_name type;   alter table tb1 drop col_name;
+
+3. drop table tbl_name; drop database db_name;
+
+4. 删除表中所有数据：truncate table tbl_name;
+
+### auto_increment 字段
+
+1. 自增字段必须创建在 key 域上。
+
+2. 可以创建自增字段：auto_increment[=start_val]。添加数据时可以不为自增字段指定值。
+
+### having
+
+1. 使用 having 的原因在于 where 无法和聚合函数一同使用。
+
+2. having 可以和 group by 结合使用。
+
