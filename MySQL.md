@@ -72,8 +72,11 @@ select tb1.col1, ..., tbl2.col1 from tb1 join tb2 on tb1.colN = tb2.colN;
 ### 修改表
 
 1. 修改数据类型的两种方式：
+
 * alter table tbl_name change col_name new_col_name col_type constraint_name;
+
 * alter table tbl_name modify col_name col_type constraint_name;
+
 后者不能修改列名。
 
 2. alter table tb1 add col_name type;   alter table tb1 drop col_name;
