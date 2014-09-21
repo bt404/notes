@@ -97,3 +97,36 @@ select tb1.col1, ..., tbl2.col1 from tb1 join tb2 on tb1.colN = tb2.colN;
 
 2. having 可以和 group by 结合使用。
 
+### 锁机制
+
+#### 悲观锁
+
+1. 数据库提供的锁，使用 select ... for update。
+
+2. 针对主键或者创建索引的字段进行 for update 查询，使用 row lock（前提是查找到数据，否则不上锁）。对于其它类型字段或者区间查询（即使是主键或索引字段）使用 table lock。
+
+3. 缺点：对于长事务或者其它长时间加锁情形，会降低程序的并发性。
+
+#### 乐观锁
+
+1. 是一种人工的加锁方式，在表中添加一个用于版本对照的字段（或者是时间戳），每次用户执行第二次 update 之前会再次查询该数据，如果版本号未变（或者时间戳相同），那么可以执行该 update 操作，否则返回错误。
+
+### 为什么使用视图
+
+1. 封装查询（避免数据冗余）
+
+2. 灵活的安全性控制（针对不同的视图设置不同的权限）
+
+### 触发器
+
+    create trigger tgr_name
+    before|after
+    insert|update|delete
+    on tbl_name
+    for each row
+    begin
+       sql clause
+    end;
+
+### 存储过程
+
