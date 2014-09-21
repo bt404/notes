@@ -45,10 +45,15 @@ select tb1.col1, ..., tbl2.col1 from tb1 join tb2 on tb1.colN = tb2.colN;
 ### 常用约束
 
 * NOT NULL
+
 * UNIQUE
+
 * PRIMARY KEY
+
 * FOREIGN KEY
+
 * CHECK
+
 * DEFAULT
 
 1. 建表时，多个约束之间不实用逗号分隔。可以直接在字段后面添加 unique，也可以在一个新行里使用 unique(col1, col2, ...)。
