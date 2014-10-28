@@ -1,7 +1,0 @@
-homebrew将程序安装在/usr/local/Cellar/下，然后将该文件夹链接到/usr/local/opt/下。
-
-设置一个程序开机启动，需要编写好相应的plist文件，链接到~/Library/LaunchAgents/下。
-
-brew安装好的程序通常将他的plist文件全部拷贝到上述文件夹下，可以设置开机启动。
-
-使用brew info package_name可以查看如何重启一个用brew安装的程序。
