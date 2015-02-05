@@ -61,7 +61,7 @@
 18. 常用的NSArray初始化方法：
   + (id) arrayWithObject: (id) anObject;
   + (id) arrayWithObjects: (id) firstObject, …;
-  -  (id) initWithObjects: (id) firstObject, …;
+  - (id) initWithObjects: (id) firstObject, …;
 
 
 19. 对于NSArray，nil表示了一个该对象的结尾，使用上一条的最后两个方法初始化的对象必须以nil结尾。如果用来初始化的对象中中间有nil，那么将在此被截断，后面的对象不在保存在NSArray对象中。
