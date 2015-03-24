@@ -38,4 +38,14 @@
 
 18. interface 中定义的 constant 不能在类中修改他的值。
 
-19. 
+19. PHP 中的 overloading 不同与其他语言，他不支持通常意义的重载，定义不同签名的两个同名方法会报错。
+
+20. `__get($name), __set($name, $value), __isset($name), __unset($name)` 4个 magic function 在访问类中未设置的属性时被触发。`__call($name, $arguments), __callStatic($name, $arguments)` 在调用类中未设置的方法时被触发。上述方法必须被定义为 public。
+
+21. 当调用方法使用参数数量超过签名中参数数量时，多出的参数会被自动忽略，方法照常执行。
+
+22. `foreach` 可以遍历一个 object 中所有可见的 property。也可通过实现 Iterator 接口来指定 `foreach` 的执行行为，相关的还有 IteratorAggregate 接口。
+
+23. 使用 `clone` 关键字来复制一个 object，本质是调用类的 `__clone()` 方法。
+
+24. 
