@@ -51,3 +51,5 @@
 24. 可以在 function 和 method 的参数列表中指定参数的类型，则调用该函数/方法时必须使用对应类型的参数。该类型只能是类、接口、函数、数组等类型，不能是 int/string 等原生类型。通过设定默认参数为 NULL 可以在传参时不指定参数，否则不能通过 NULL 调用。
 
 25. late static binding 用在存在继承关系的若干类中。当直接使用 `cls_name::method` 、 `__CLASS__` 和 `self::method` 指定 static 方法或者获取的类名都是定义当前方法所在的类（即在子类中调用父类方法，则该方法在上述三种方法获取类的引用为父类的引用）。late static binding 的使用方法为调用 `static::method`，此时使用的类引用为最外层调用方法所在类。
+
+26. 使用 `spl_autoload_register()` 来处理类引入。
