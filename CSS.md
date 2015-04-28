@@ -40,5 +40,13 @@
 
 19. 默认box的宽度是和width、padding、border和margin有关的，通过设置box-sizing: border-box使得后三者不再占据width之外的宽度，即width决定了最终实际宽度。对应不同浏览器分别为-webkit-box-sizing、-moz-box-sizing和box-sizing属性，IE8之后开始支持该属性。
 
-20. 
+20. em是一种相对计算单位，表示相对与父元素字体大小的值。用来设置弹性布局。一般浏览器默认font-size为16px（通过设置html的font-size为100%，body的font-size为1em），所以1em通常为16px，然后用倍数计算em值，并且最多到小数点后3位。
+
+21. 设置为inline-block的元素可以设置vertical-align来设置垂直对齐方式。
+
+22. 可以设置column-*等属性来将一个内容区域分列显示，不支持IE9一下版本。
+
+23. 设置`@media`可以指定针对不同设备（主要是不同属性，如屏幕宽度和分辨率等）来针对性设置部分css。IE9之后可以使用。
+
+24. 
 
