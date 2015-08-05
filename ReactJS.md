@@ -25,9 +25,9 @@
   3. 移除
     * componentWillUnmount
 
-8. flux单向绑定中的4个主要角色：Action/Dispatcher/Store/Vies；流程为用户通过与View交互产生Action，所有Action到达Dispatcher并由它向相关的Store分发，Store执行注册过的和该Action相关的回调，最后将数据更新返回到view。
+8. flux单向绑定中的4个主要角色：Action/Dispatcher/Store/Vies；流程为用户通过与View交互产生Action，所有Action到达Dispatcher并由它向相关的Store分发，Store执行注册过的和该Action相关的回调，最后将数据更新返回到view；
 
-9. 可以使用ReactLink实现双向绑定，本质还是单向绑定，内部实现是通过valueLink/checkedLink将一个state和handleChange函数和一个组件绑定在一起实现的。
+9. 可以使用ReactLink实现双向绑定，本质还是单向绑定，内部实现是通过valueLink/checkedLink将一个state和handleChange函数和一个组件绑定在一起实现的，使用中通过linkState方法绑定；
 
 10. 
 
