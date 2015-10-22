@@ -20,4 +20,6 @@
 
 7. 使用setState不保证马上同步修改state值，如果需要在setState后立即使用修改后的state值，需要setState提供第2个参数，是一个回调函数，该函数在state值确认修改后执行；
 
-8. 
+8. RNChart由于配合的rn版本问题，不能直接`npm install`，需要`npm install https://github.com/onefold/react-native-chart --save`；而且文档中传递的`color`参数有错，具体参见dc代码，不应传递一个字符串；
+
+9. 
