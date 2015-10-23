@@ -22,4 +22,8 @@
 
 8. RNChart由于配合的rn版本问题，不能直接`npm install`，需要`npm install https://github.com/onefold/react-native-chart --save`；而且文档中传递的`color`参数有错，具体参见dc代码，不应传递一个字符串；
 
-9. 
+9. RNChart的data元素数量必须大于等于xLables的元素数量，而且不能全为0；并且RNChart的data元素全小于1时，y轴会出现全显示0的bug；
+
+10. 可以将组件作为props传入另一个组件，然后在另一个组件中直接通过标签的形式来引入该组件；
+
+11. 
