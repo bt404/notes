@@ -26,4 +26,12 @@
 
 10. 可以将组件作为props传入另一个组件，然后在另一个组件中直接通过标签的形式来引入该组件；
 
-11. 
+11. TouchableHighlight只能有一个直接子组件（类似的还有其它一些组件）；
+
+12. NavigatorIOS中设置translucent为false可以取消半透明效果，颜色即为设置值，否则会自动添加半透明效果，而且设置为true（default）后wrapper需要设置marginTop（有时为65），否则内容部分会整体向上偏移；
+
+13. 可以将父组件的state绑定到子组件的state上，这样想要刷新子组件，可以通过修改父组件的state，然后在子组件中的componentWillReceiveProps方法中修改子组件的state为新的props，该过程应该可以优化；
+
+14. 必须显示设置Image的宽高，才能让图片显示；
+
+15. 
