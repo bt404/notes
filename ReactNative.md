@@ -38,4 +38,8 @@
 
 16. 当在ScrollView中嵌套ListView子组件时，因为两个组件都具有滚动事件，滑动时会造成“什么狗屁玩意儿我也不知道怎么就出现数据不加载而且系统也不给你错误提示总之就是很cao蛋搞s你不偿命”这种bug，所以要把ScrollView改为View，解决该问题；
 
-17. to be fuckinued...
+17. 修复RNChart bug，使用NSNumber代替NSUInterger表示y轴标签，并保留1位小数，使得最大数据小于1时y轴坐标为1位小数；
+
+18. 修复RNChart bug，当传入图表的数据数组首尾相同时，会使得scale为+INF，导致程序crash，现加上置0兼容；
+
+19. to be fuckinued...
