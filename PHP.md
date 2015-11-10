@@ -60,4 +60,6 @@
 
 29. `Bad Request`一般为路由问题，需要注意命名空间是否正确。
 
-30. 
+30. `http_build_query`可以将array转换成query string。
+
+31. 
