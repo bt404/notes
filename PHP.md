@@ -53,3 +53,9 @@
 25. late static binding 用在存在继承关系的若干类中。当直接使用 `cls_name::method` 、 `__CLASS__` 和 `self::method` 指定 static 方法或者获取的类名都是定义当前方法所在的类（即在子类中调用父类方法，则该方法在上述三种方法获取类的引用为父类的引用）。late static binding 的使用方法为调用 `static::method`，此时使用的类引用为最外层调用方法所在类。
 
 26. 使用 `spl_autoload_register()` 来处理类引入。
+
+27. 做图片代理时，可以先将response中的图片保存下来，获取它的body部分，此时数据是string类型。使用`imagecreatefromstring`将该字符串转换为resource，然后使用`imagejpeg`和`imagedestroy`方法再将图片回传给browser（需要先用header函数设置头部的Content-type为image/jpeg;）。
+
+28. 可以使用`file_put_content`函数来做日志处理。
+
+29. 
