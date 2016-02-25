@@ -21,4 +21,10 @@
 
 10. 事件触发有capture和bubble两种方式， 前者是从父元素向子元素依次触发handler，后者反之。事件代理是指在父元素上绑定handler，然后通过事件冒泡来触发handler，这样既减少了事件绑定的数量提升性能，又能在新添加子元素也不需要为子元素添加handler。
 
-11. 
+11. POST请求传输的数据格式通过在Header中设置`Content-Type`来实现，常用的有：
+  * `application/x-www-form-urlencoded;charset=utf-8`：内容中通过key/value的形式传输数据。
+  * `multipart/form-data`：常用来实现文件上传，将消息主体分为多个部分，并且通过----boundary来分割，以----boundary--来结尾。
+  * `application/json`：消息主体直接使用json数据。
+  * `text/xml`：消息主体是一段xml。
+
+12. 
