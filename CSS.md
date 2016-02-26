@@ -68,6 +68,8 @@
   * layout viewport：一个较宽值，一般是固定的，为了能显示下为桌面设计的网站。
   * visual viewport：表示浏览器可视区域宽度。
   * ideal viewport：一般为屏幕宽度（不同设备不同），为了避免出现横向滚动条。
-  meta标签设置viewport设置的是layout viewport，一般同时设置`width=device-width`和`initial-scale=1.0`来使得layout viewport宽度和ideal viewport一致。因为前者对iPhone/iPad无效，后者对IE无效，无效表现为无论横竖屏，都会把layout viewport设置为竖屏时的ideal viewport。scale（缩放值）计算公式：scale = ideal viewport / visual viewport。
+  meta标签设置viewport设置的是layout viewport，一般同时设置`width=device-width`和`initial-scale=1.0`来使得layout viewport宽度和ideal viewport一致。因为前者对iPhone/iPad无效，后者对IE无效，无效表现为无论横竖屏，都会把layout viewport设置为竖屏时的ideal viewport。scale（缩放值）计算公式：scale = ideal viewport / visual viewport。设置layout viewport为固定值的意义在于使用和桌面相同的css计算规格来渲染页面，使页面不至于被压缩而模糊不清。而设置viewport这个meta属性修改layout viewport的意义在于，有些网站专门针对移动设备屏幕进行了适配，使用默认layout viewport宽度不再合适，所以修改它。
 
-33. 
+33. 承上条，虽然默认layout viewport一般都是一个很大的固定值，但在当前大多设备浏览器中都会使页面自动适应屏幕的宽度，这是因为浏览器一般会有一个initial-scale的默认值，来对页面进行缩放。
+
+34. 
