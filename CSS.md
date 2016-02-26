@@ -48,7 +48,7 @@
 
 23. 设置`@media`可以指定针对不同设备（主要是不同属性，如屏幕宽度和分辨率等）来针对性设置部分css。IE9之后可以使用。
 
-24. 使用find指定'option:checked'可以得到被选中的select选项。
+24. 使用find指定`option:checked`可以得到被选中的select选项。
 
 25. scrollTop获得当前屏幕中左上角距离容器顶部的距离，position获得元素相对最近已定位元素的位置偏移量，offset获得元素相对与整个文档的位置偏移量。
 
@@ -63,3 +63,11 @@
 30. `delegate`函数直接绑定match元素的指定事件，这里的match元素包括之后动态添加的元素，所以编码时应注意避免重复绑定问题。
 
 31. 设置child的z-index比parent的z-index高是没有效果的，因为他们两个在一个块内。
+
+32. 移动设备设备上有3种viewport：
+  * layout viewport：一个较宽值，一般是固定的，为了能显示下为桌面设计的网站。
+  * visual viewport：表示浏览器可视区域宽度。
+  * ideal viewport：一般为屏幕宽度（不同设备不同），为了避免出现横向滚动条。
+  meta标签设置viewport设置的是layout viewport，一般同时设置`width=device-width`和`initial-scale=1.0`来使得layout viewport宽度和ideal viewport一致。因为前者对iPhone/iPad无效，后者对IE无效，无效表现为无论横竖屏，都会把layout viewport设置为竖屏时的ideal viewport。
+
+33. 
