@@ -74,4 +74,9 @@
 
 34. CSS居中的一种方法，设置父元素为relative，子元素为relative（或者根据需要设置为absolute，如果相对窗口，则设置为fixed），然后设置子元素left为50%，margin-left为子元素宽度一半的相反数。
 
-35. 
+35. 清除浮动的3种办法：
+  * 给父级元素设置`overflow: auto/hidden`，对于 IE 6.0 需要添加`zoom: 1`，这种方式可以指定父元素的宽高，最终宽高以父元素为准。
+  * 在父元素闭合前添加一个元素并设置`clear: both`，但这种方式不能指定父元素的宽高，最终宽高以浮动元素为准。
+  * 设置父元素的`:before`和`:after`为`content: ' ';display: table;`，然后单独设置`:after`为`clear: both`，最终宽高以浮动元素为主。
+
+36. 
