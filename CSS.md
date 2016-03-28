@@ -79,4 +79,6 @@
   * 在父元素闭合前添加一个元素并设置`clear: both`，但这种方式不能指定父元素的宽高，最终宽高以浮动元素为准。
   * 设置父元素的`:before`和`:after`为`content: ' ';display: table;`，然后单独设置`:after`为`clear: both`，最终宽高以浮动元素为主。
 
-36. 
+36. 使用 rem 的方式来适配屏幕的方式是，使用 js 动态计算或者 media query 来根据不同屏幕设置合适的 HTML font-size，其它元素的宽度都使用 rem 来设置。
+
+37. 
