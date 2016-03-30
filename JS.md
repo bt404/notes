@@ -45,4 +45,6 @@
   * object 类型对象：返回该对象
   * 非 object 类型对象：返回同`this`
 
-17. 
+17. `escape`用来转义一个字符串，和 URL 无关，`encodeURIComponent`比`encodeURI`的转义范围更大，比如它会转义`/`而后者不会，根据需要转义的内容的用途来选择使用哪个转义函数。
+
+18. 
