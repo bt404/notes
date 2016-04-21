@@ -85,4 +85,6 @@
 
 38. 伪类选择器，使用`:nth-child()`指定某个或某类元素，其中可以设置`odd/even`和`3n+1`等表达式。
 
-39. 
+39. 可以设置背景图片，先设置 url，然后设置`background-size`来指定大小，再设置`background-repeat: no-repeat;`来防止背景重排。
+
+40. 
