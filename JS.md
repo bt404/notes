@@ -47,4 +47,6 @@
 
 17. `escape`用来转义一个字符串，和 URL 无关，`encodeURIComponent`比`encodeURI`的转义范围更大，比如它会转义`/`而后者不会，根据需要转义的内容的用途来选择使用哪个转义函数。
 
-18. 
+18. es6 中 arrow function 中的`this`是直接在语义上绑定的，而且他没有`arguments`这个参数，但是可以使用 rest arguments 来获取参数。
+
+19. 
