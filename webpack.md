@@ -2,4 +2,6 @@
 
 2. `!`的意义是从后向前使用 loader 依次处理文件，比如`style!css!less`是指先用 less-loader 处理 regex 匹配到的文件，然后将处理结果交由 css-loader 处理，最后由 style-loader 处理并输出到打包的文件中。
 
-3. 
+3. `?`的意义是通过 query string 的方式指定对应 loader 的参数，如果是通过`webpack.config.js`配置 webpack 的话，也可以通过`query`字段来设置 option。
+
+4. 
