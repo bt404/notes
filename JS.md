@@ -49,4 +49,6 @@
 
 18. es6 中 arrow function 中的`this`是直接在语义上静态绑定的，而不是运行时动态绑定。总是和 enclosing context 中的环境绑定。而且他没有`arguments`这个参数，但是可以使用 rest arguments 来获取参数。
 
-19. 
+19. generator 函数每次执行`next()`返回一个指针，指向下一个`yield`表达式的位置。结果是一个对象，有`value`和`done`两个属性，`value`表示`yield`后表达式的值，`done`表示当前 generator 函数是否执行完毕。
+
+20. 
