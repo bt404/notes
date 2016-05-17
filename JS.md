@@ -51,4 +51,6 @@
 
 19. 调用 generator 函数返回一个指针，每次执行`next()`指向下一个`yield`表达式的位置。结果是一个对象，有`value`和`done`两个属性，`value`表示`yield`后表达式的值，`done`表示当前 generator 函数是否执行完毕。
 
-20. 
+20. npm 中的`peerDependencies`主要用于 plugin，因为 plugin 不显示依赖它的 host 包，但是它用到的 API 会依赖。所以它不需要安装指定版本的依赖，因为它的代码中没用到类似`require('host-pkg')`，但需要安装指定版本的同级依赖（在`peerDependencies`中指定）。
+
+21. 
