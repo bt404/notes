@@ -53,4 +53,8 @@
 
 20. npm 中的`peerDependencies`主要用于 plugin，因为 plugin 不显示依赖它的 host 包，但是它用到的 API 会依赖。所以它不需要安装指定版本的依赖，因为它的代码中没用到类似`require('host-pkg')`，但需要安装指定版本的同级依赖（在`peerDependencies`中指定）。
 
-21. 
+21. 使用`sessionStorage`保证在同一个窗口（标签页）而且是同一个 host 下，数据可以共享。如果窗口关闭，则数据清除。
+
+22. 使用`referrer`这个 name 的 meta 标签来使得网页去掉 referrer 信息，值为`no-referrer/never`，never 是为了兼容部分老的设备。其中安卓需要 5.0 版本以上可以支持该配置。
+
+23. 
