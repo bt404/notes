@@ -69,4 +69,6 @@
 
 28. Chrome 51 开始支持 IntersectionObserver，用来检测一个元素是否在 viewport 内并执行回调逻辑。
 
-29. 
+29. Observable 的`subscribe`方法类似一种延迟执行，并且可以实现返回多个值。当执行`subscribe`的时才会执行默认 Observable 上的函数。它是一种 push 模型。
+
+30. 
