@@ -71,4 +71,6 @@
 
 29. Observable 的`subscribe`方法类似一种延迟执行，并且可以实现返回多个值。当执行`subscribe`的时才会执行默认 Observable 上的函数。它是一种 push 模型。
 
-30. 
+30. Observable 中的 next 方法只能传递一个参数，如果设置多个，其它参数会在 observer 的调用中被设置为`undefined`。并且 Observable 中可以执行多次 next，但是只能执行一次 error 或 complete（而且二者只能执行其一），并且在执行 error/complete 后执行终止，后续 next 没有效果，但是可以继续执行其它逻辑。
+
+31. 
