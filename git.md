@@ -3,3 +3,5 @@
 2. 使用`git reset --hard <hash>`来撤销commit到`<hash>`所指示的版本号。
 
 3. 
+
+this is a test too!
