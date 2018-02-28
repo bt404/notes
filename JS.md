@@ -81,7 +81,7 @@
 
 32. 通过选择器直接赋值的属性默认是 enumerable 的，且值可修改；通过`Object.defineProperty`定义的属性默认是 immutable 的，不可修改也不可删除，可以通过设置`configurable`为`true`来修改该特性；同时通过该方法定义的属性也默认不可枚举，可设置`enumerable`为`true`来修改，可枚举是指能被`for...in/Object.keys`遍历。
 
-33. `for...in`会遍历一个对象所有属性，包括其原型链上的属性，`Object.keys`不会，前者可以配合`Object.hasOwnProperty`来过滤掉原型上的属性，`Object.getOwnPropertyNames`和`keys`的区别在于它可以获取不可枚举的属性。
+33. `for...in`会遍历一个对象所有可枚举属性，包括其原型链上的属性，`Object.keys`不会，前者可以配合`Object.hasOwnProperty`来过滤掉原型上的属性，`Object.getOwnPropertyNames`和`keys`的区别在于它可以获取不可枚举的属性。
 
 34. `Object.assign`会复制源对象上的 enumerable 且非原型链上的属性到目标对象。
 
