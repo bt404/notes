@@ -87,4 +87,6 @@
 
 35. `Object.setPrototypeOf`为 ES6 新增的方法，可以设置一个对象的原型。
 
-36. 
+36. 使用`in`判断属性是否在一个对象中，会查找对象自身属性、prototype 上的属性，同时也会查找 enumerable 为`false`的属性。
+
+37. 
